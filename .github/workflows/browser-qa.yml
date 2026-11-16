@@ -1,4 +1,5 @@
 name: Browser QA screenshots (not a deploy)
+# QA rerun: portrait instruction screenshots + landscape mobile interactions
 on:
   push:
     paths:
