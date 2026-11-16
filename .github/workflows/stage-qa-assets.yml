@@ -1,0 +1,55 @@
+name: Transfer pinned QA artwork and audio
+on:
+  push:
+    paths:
+      - '.github/workflows/stage-qa-assets.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  stage-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out QA repository
+        uses: actions/checkout@v4
+        with:
+          path: qa
+          persist-credentials: true
+      - name: Check out exact approved MVP revision (read-only source)
+        uses: actions/checkout@v4
+        with:
+          repository: jinichintalapoodi-a11y/prefrontal-pilates-studio
+          ref: 570dda60972cfbe59383f4f69f43ac924d87bdcd
+          path: approved-source
+          persist-credentials: false
+      - name: Verify pinned source and frontend code identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C approved-source rev-parse HEAD)" = "570dda60972cfbe59383f4f69f43ac924d87bdcd"
+          for f in index.html Stargaizer.html Sentinel.html pps-session.js neural-orchard-progress.js neural-orchard-preferences.js neural-orchard-ui.js neural-orchard-stargazer-hooks.js neural-orchard-feedback.js; do
+            test "$(git -C qa hash-object "$f")" = "$(git -C approved-source hash-object "$f")"
+          done
+          grep -Fq 'const PILOT_FEEDBACK_DISABLED=true;' qa/neural-orchard-feedback.js
+          grep -Fq 'if(PILOT_FEEDBACK_DISABLED)return;' qa/neural-orchard-feedback.js
+      - name: Copy only approved binary assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          for f in wisteria_path.jpg wisteria_mobile.jpeg star_gazer.jpeg star_gazer_mobile.jpeg sentinel_savanna_mounds.png sentinel_meerkat_upperbody.png atlasaudio-warm-acoustic-621617.mp3 yeahmusic-african-reggae-underscore-606601.mp3; do
+            cp "approved-source/$f" "qa/$f"
+            test "$(git -C qa hash-object "$f")" = "$(git -C approved-source hash-object "$f")"
+          done
+          test "$(find qa -maxdepth 1 -type f | wc -l)" -eq 18
+      - name: Commit QA assets only; do not enable Pages
+        shell: bash
+        working-directory: qa
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- wisteria_path.jpg wisteria_mobile.jpeg star_gazer.jpeg star_gazer_mobile.jpeg sentinel_savanna_mounds.png sentinel_meerkat_upperbody.png atlasaudio-warm-acoustic-621617.mp3 yeahmusic-african-reggae-underscore-606601.mp3
+          if ! git diff --cached --quiet; then
+            git commit -m "Add exact pinned MVP 1.1 QA artwork and audio assets"
+            git push origin HEAD:main
+          fi
