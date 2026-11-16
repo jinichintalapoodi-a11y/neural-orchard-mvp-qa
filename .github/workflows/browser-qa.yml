@@ -1,0 +1,31 @@
+name: Browser QA screenshots (not a deploy)
+on:
+  push:
+    paths:
+      - '.github/workflows/browser-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser-qa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Playwright browsers for genuine rendering
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium firefox webkit
+      - name: Serve exact QA frontend files and run browser scenarios
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/qa-http.log 2>&1 &
+          sleep 2
+          node .github/scripts/qa-browser-check.mjs
+      - name: Upload actual browser screenshots and test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: neural-orchard-qa-browser-screenshots
+          path: qa-screenshots/
+          if-no-files-found: warn
+          retention-days: 14
