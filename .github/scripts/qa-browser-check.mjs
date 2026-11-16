@@ -29,6 +29,8 @@ async function suite(kind,browser,options){
   record(kind,'Sentinel initial instruction visible',await page.locator('#card.instruction-card h1').count()===1);
   record(kind,'Sentinel audio toggle present',await page.locator('#sound').count()===1);
   await page.screenshot({path:`${out}/${pfx}-sentinel-level1.png`,fullPage:true});
+  // Preserve portrait instruction evidence, then rotate mobile emulation for the game's landscape-only flow.
+  if(options.isMobile){await page.setViewportSize({width:844,height:390});record(kind,'Landscape viewport enabled for mobile gameplay',true)}
   for(let level=2;level<=5;level++){
    await page.goto(base+'Sentinel.html',{waitUntil:'domcontentloaded'});
    await page.evaluate(lv=>localStorage.setItem('sentinelLevel',String(lv)),level);
