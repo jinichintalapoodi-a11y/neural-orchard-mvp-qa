@@ -1,0 +1,48 @@
+name: Publish verified Neural Orchard MVP QA
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages-qa
+  cancel-in-progress: false
+jobs:
+  build-and-publish:
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify complete pinned MVP frontend and inactive feedback
+        shell: bash
+        run: |
+          set -euo pipefail
+          files=(index.html Stargaizer.html Sentinel.html pps-session.js neural-orchard-progress.js neural-orchard-preferences.js neural-orchard-ui.js neural-orchard-stargazer-hooks.js neural-orchard-feedback.js wisteria_path.jpg wisteria_mobile.jpeg star_gazer.jpeg star_gazer_mobile.jpeg sentinel_savanna_mounds.png sentinel_meerkat_upperbody.png atlasaudio-warm-acoustic-621617.mp3 yeahmusic-african-reggae-underscore-606601.mp3)
+          for f in "${files[@]}"; do test -s "$f"; done
+          test -f .nojekyll
+          grep -Fq 'const PILOT_FEEDBACK_DISABLED=true;' neural-orchard-feedback.js
+          grep -Fq 'if(PILOT_FEEDBACK_DISABLED)return;' neural-orchard-feedback.js
+          mkdir ../qa-public
+          for f in "${files[@]}"; do cp "$f" ../qa-public/; done
+          cp .nojekyll ../qa-public/
+          test "$(find ../qa-public -type f | wc -l)" -eq 18
+          if find ../qa-public -type f | grep -E '(feedback-email|feedback-service|registration|\.github)' ; then exit 1; fi
+      - name: Configure free Pages hosting without custom domain
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Upload strictly frontend-only website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ../qa-public
+      - name: Deploy isolated QA site
+        id: deploy
+        uses: actions/deploy-pages@v4
