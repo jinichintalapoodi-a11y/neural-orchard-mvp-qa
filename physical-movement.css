@@ -90,29 +90,43 @@ body.show-movement #portal-inner-practice {
   }
 }
 
-#physical-movement .movement-video-list {
-  display: grid;
-  gap: 12px;
-  list-style: none;
-  margin: 10px 0 0;
+#physical-movement.movement-compact {
+  overflow: hidden;
   padding: 0;
 }
 
-#physical-movement .movement-video-list li {
-  min-width: 0;
-  padding: 12px 14px 8px;
-  border: 1px solid var(--gold-alpha);
-  border-radius: 14px;
-  background: #30213c;
+#physical-movement.movement-compact .movement-view {
+  position: absolute;
+  inset: 11% 0 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 4px clamp(24px, 8%, 58px) 24px;
 }
 
-#physical-movement .movement-video-list h3 {
-  margin: 0 0 6px;
-  font-size: 1.1rem;
+#physical-movement.movement-compact .movement-collection {
+  text-align: center;
 }
 
-#physical-movement .movement-video-list a {
+#physical-movement .movement-video-list {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0 3px;
+}
+
+#physical-movement .movement-video-list .studio-btn {
+  max-width: none;
+  margin: 0;
+}
+
+#physical-movement .movement-watch {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+  margin: 0 0 6px;
+}
+
+#physical-movement .movement-attribution {
+  font-size: .875rem;
 }

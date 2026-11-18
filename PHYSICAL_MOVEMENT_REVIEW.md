@@ -28,7 +28,7 @@ The four videos are founder-selected and pending full review for publication. Th
 - [ ] Review scientific and medical claims. Seek qualified review for clinical claims or higher-risk movements.
 - [ ] Record the reviewer, date, decision, and outstanding limitations. Keep the entry pending until the review supports publication.
 
-Metadata verification covered identity and watch links. Playback, caption quality, specific movements and claims remain unverified. The app displays **Collection in Development** and the creator channel reference while all records are pending.
+Metadata verification covered identity and watch links. Playback, caption quality, specific movements and claims remain unverified. The category displays **Collection in Development** while all records are pending. Once approved, a session appears as a choice and opens a separate view with a short description and its official YouTube link.
 
 ## Evidence and source shortlist
 
@@ -65,3 +65,9 @@ These sources support the design scope. They do not establish effectiveness or s
 - An isolated browser fixture passed all four cards at 1440 × 900, 390 × 844 and 320 × 568. It checked display labels, original titles, attribution, official watch URLs, separate-tab and opener protection attributes, keyboard focus, 44px link heights and horizontal fit. A record marked approved without a review record stayed hidden. The fixture approvals were applied in memory for testing only. All four committed records remain pending.
 - Captured a mobile comparison of the current draft and the simulated approved layout. Browser checks used local assets through request routing and fallback fonts. They did not cover YouTube playback, screen readers or real devices.
 - JavaScript syntax and Git whitespace checks passed. No browser test failures were observed in the completed run.
+
+### Arch layout follow-up
+
+The Eyes, Head & Body doorway now has one introductory sentence and session buttons. Each approved session opens its own view with a brief description, the official YouTube link, creator credit and a short safety cue. Back restores focus to the last session button. The scrollable content starts inside the arch curve.
+
+Chromium passed pending-menu, simulated approved-menu and separate video-view checks at 1440 × 900, 390 × 844, 320 × 568 and 844 × 390. The checks covered horizontal fit, clipping at interactive elements, keyboard activation, focus restoration, and matching YouTube URLs with separate-tab and opener-protection attributes. PPS and Breathe smoke checks passed on desktop. Approvals were simulated only in the browser.
