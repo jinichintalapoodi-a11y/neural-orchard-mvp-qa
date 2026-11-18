@@ -8,9 +8,22 @@ The entrance mounts a movement view inside the existing portal and uses the shar
 
 To add a reviewed video, add a record to `physical-movement-content.js` with the category ID, exact title, attributed creator, official watch URL and review status. Only entries marked approved appear. Keep the decision, reviewer, review date and safety/accessibility notes in the review record. The channel reference is separately identified in the UI.
 
+## Founder selections
+
+On November 18, 2026, the founder approved these Eligned Movement selections for the collection review. The lymphatic reference was matched provisionally to the official **NEURO-LYMPH 2.0** upload.
+
+| Founder reference | Official watch page | Review status |
+| --- | --- | --- |
+| Cerebellar | [CEREBELLUM UPGRAGE](https://www.youtube.com/watch?v=U1HsnRQyJ2U) | Founder selected. Full video and claims review pending. |
+| Lymphatic drainage | [NEURO-LYMPH 2.0](https://www.youtube.com/watch?v=lZSN2UET1GQ) | Provisional title match. Screen the full video for drainage or detox claims and assess whether its movements fit the collection. |
+| Hormonal brain | [Neuro-movement for hormonal brains](https://www.youtube.com/watch?v=BnnBt67tuqE) | Founder selected. Full video and claims review pending. |
+| Waking up the brain | [TURN YOUR BRAIN ON](https://www.youtube.com/watch?v=Pju2LEAOG9w) | Founder selected. Full video and claims review pending. |
+
+Public catalog approval requires review of the full video, claims, accessibility and safety. Clinical claims and higher-risk content require qualified review. The catalog is still empty.
+
 ## Eyes, Head & Body candidate screening
 
-The official channel video listing and the four watch-page metadata responses were retrieved. Each watch page reported playback availability in its metadata and advertised automatically generated English captions. Playback, caption accuracy, full movements, symptom provocation, alternatives and claims spoken in the video remain unverified. No video is approved.
+The official channel video listing and the four watch-page metadata responses were retrieved. Each watch page reported playback availability in its metadata and advertised automatically generated English captions. Playback, caption accuracy, full movements, symptom provocation, alternatives and claims spoken in the video remain unverified. No video has completed the publication review.
 
 | Official watch page | Duration | What to review before deciding |
 | --- | --- | --- |
