@@ -1,0 +1,41 @@
+// Door order is left, right for each row. Only approved catalog entries are shown.
+export const categories = [
+  {
+    id: 'strength', name: 'Strength for Tomorrow',
+    description: 'Build strength for everyday activities such as getting up from a chair and carrying groceries.',
+    safety: 'Choose a comfortable range and manageable resistance. Build up gradually. A seated option can help if standing is difficult.',
+  },
+  {
+    id: 'balance', name: 'Balance Before You Need It',
+    description: 'Practice steady standing and controlled weight shifts.',
+    safety: 'Use a fixed countertop or railing for support. If you’ve had recent falls or feel unsteady even with support, ask a healthcare professional about suitable exercises.',
+  },
+  {
+    id: 'coordination', name: 'Eyes, Head & Body',
+    description: 'Explore how the eyes, head, and body work together during everyday movement.',
+    safety: 'This collection is for general coordination. If head or eye movement brings on dizziness, stop and seek professional assessment before continuing. Clinical vestibular rehabilitation is tailored to the diagnosis.',
+    creator: {
+      name: 'Eligned Movement',
+      channel: 'https://www.youtube.com/@elignedmovement',
+    },
+  },
+  {
+    id: 'space', name: 'Move Through Space',
+    description: 'Practice stepping in different directions and moving through clear spaces with control.',
+    safety: 'Clear the floor and use stable support within reach. Start with slow, small steps and choose a supported or seated option if turning feels unsafe.',
+  },
+  {
+    id: 'aerobic', name: 'Heart & Brain Movement',
+    description: 'Explore walking and other ways to build aerobic endurance.',
+    safety: 'Start at a pace you can sustain comfortably. At moderate intensity, you can usually talk but would have trouble singing.',
+  },
+  {
+    id: 'mobility', name: 'Flow & Restore',
+    description: 'Explore gentle mobility, stretching, breathing, and recovery.',
+    safety: 'Move within a comfortable range. Use a stable chair for seated options and stop if a movement causes pain or dizziness.',
+  },
+];
+
+// Each entry needs categoryId, title, creator, url, and reviewStatus.
+// Keep candidate videos out of the user-facing list until all reviews are complete.
+export const exerciseCatalog = [];
