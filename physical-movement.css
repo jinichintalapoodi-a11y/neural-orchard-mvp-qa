@@ -89,3 +89,30 @@ body.show-movement #portal-inner-practice {
     padding-bottom: 18px;
   }
 }
+
+#physical-movement .movement-video-list {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+#physical-movement .movement-video-list li {
+  min-width: 0;
+  padding: 12px 14px 8px;
+  border: 1px solid var(--gold-alpha);
+  border-radius: 14px;
+  background: #30213c;
+}
+
+#physical-movement .movement-video-list h3 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+
+#physical-movement .movement-video-list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}

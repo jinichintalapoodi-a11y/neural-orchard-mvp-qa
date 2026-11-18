@@ -6,33 +6,29 @@ Draft [PR #1](https://github.com/jinichintalapoodi-a11y/neural-orchard-mvp-qa/pu
 
 The entrance mounts a movement view inside the existing portal and uses the shared arch geometry. Category buttons are in reading order across the two doors. Returning from a collection restores focus to its category, and returning home restores focus to the entrance. The module depends on the existing home entrance, content portal and breathing cancellation method. Serve the repository using an HTTP static server because the movement script imports a JavaScript module.
 
-To add a reviewed video, add a record to `physical-movement-content.js` with the category ID, exact title, attributed creator, official watch URL and review status. Only entries marked approved appear. Keep the decision, reviewer, review date and safety/accessibility notes in the review record. The channel reference is separately identified in the UI.
+The four founder-selected records live in `physical-movement-content.js`. Each record keeps the display label, original title, creator attribution, official watch URL, neutral description and review status. Only records marked `approved` with a reviewer, review date and a limitations list appear in the collection. Use ISO dates and record any outstanding limitations in the review entry. Use an empty limitations list only when the reviewer has none to record.
 
-## Founder selections
+## Eyes, Head & Body review status
 
-On November 18, 2026, the founder approved these Eligned Movement selections for the collection review. The lymphatic reference was matched provisionally to the official **NEURO-LYMPH 2.0** upload.
+The four videos are founder-selected and pending full review for publication. The official watch pages returned the listed titles, publisher name Eligned, and the same channel ID (`UC11ddaJlgx3-iQRgh42rYGw`). The collection attributes the creator as Eligned Movement.
 
-| Founder reference | Official watch page | Review status |
-| --- | --- | --- |
-| Cerebellar | [CEREBELLUM UPGRAGE](https://www.youtube.com/watch?v=U1HsnRQyJ2U) | Founder selected. Full video and claims review pending. |
-| Lymphatic drainage | [NEURO-LYMPH 2.0](https://www.youtube.com/watch?v=lZSN2UET1GQ) | Provisional title match. Screen the full video for drainage or detox claims and assess whether its movements fit the collection. |
-| Hormonal brain | [Neuro-movement for hormonal brains](https://www.youtube.com/watch?v=BnnBt67tuqE) | Founder selected. Full video and claims review pending. |
-| Waking up the brain | [TURN YOUR BRAIN ON](https://www.youtube.com/watch?v=Pju2LEAOG9w) | Founder selected. Full video and claims review pending. |
+| Display label | Official video | Duration | Focus of pending review |
+| --- | --- | --- | --- |
+| Cerebellar Movement | [CEREBELLUM UPGRAGE](https://www.youtube.com/watch?v=U1HsnRQyJ2U) | 23:53 | Identify the movements and screen for claims about cerebellar function. |
+| Neuro-Lymph Movement | [NEURO-LYMPH 2.0](https://www.youtube.com/watch?v=lZSN2UET1GQ) | 15:38 | Check whether the movements fit the collection and flag any drainage or detox claims. |
+| Movement for Hormonal Transitions | [Neuro-movement for hormonal brains](https://www.youtube.com/watch?v=BnnBt67tuqE) | 23:57 | Review the movement sequence and flag claims about menopause symptoms or brain fog. The description marks movement around 4:00. |
+| Morning Brain & Body Wake-Up | [TURN YOUR BRAIN ON](https://www.youtube.com/watch?v=Pju2LEAOG9w) | 30:47 | Check how the ball is used, the required space and balance, possible seated options, and any claims about brain function. |
 
-Public catalog approval requires review of the full video, claims, accessibility and safety. Clinical claims and higher-risk content require qualified review. The catalog is still empty.
+### Checklist for each video
 
-## Eyes, Head & Body candidate screening
+- [x] Match the official watch URL, publisher and exact source title.
+- [ ] Watch the entire video and record the movement sequence, pace, difficulty, equipment, support and space requirements.
+- [ ] Check for dizziness, fall risk or other safety concerns and document precautions, modifications and seated options as appropriate.
+- [ ] Check captions for accuracy and completeness and verify that spoken and visual cues communicate the movements.
+- [ ] Review scientific and medical claims. Seek qualified review for clinical claims or higher-risk movements.
+- [ ] Record the reviewer, date, decision, and outstanding limitations. Keep the entry pending until the review supports publication.
 
-The official channel video listing and the four watch-page metadata responses were retrieved. Each watch page reported playback availability in its metadata and advertised automatically generated English captions. Playback, caption accuracy, full movements, symptom provocation, alternatives and claims spoken in the video remain unverified. No video has completed the publication review.
-
-| Official watch page | Duration | What to review before deciding |
-| --- | --- | --- |
-| [Neuro-movement for hormonal brains](https://www.youtube.com/watch?v=BnnBt67tuqE) | 23:57 | Description references perimenopause, menopause and brain fog, with movement starting around 4:00. Check whether the demonstration fits general coordination and whether the spoken claims go beyond the evidence. |
-| [TURN YOUR BRAIN ON](https://www.youtube.com/watch?v=Pju2LEAOG9w) | 30:47 | Description mentions using a ball. Check for controlled hand–eye drills, seated options and whether the title implies a benefit the content cannot support. |
-| [CEREBELLUM UPGRAGE](https://www.youtube.com/watch?v=U1HsnRQyJ2U) | 23:53 | Title appears this way on the official page. The metadata does not establish exercise selection or safety. Screen any clinical or brain-function claims before advancing. |
-| [BRAIN EXERCISES FOR KIDS, TEENS AND ADULTS](https://www.youtube.com/watch?v=PdB5-aVewFU) | 22:01 | Broad intended audience. Verify a direct fit for midlife users, cueing and modifications before advancing. |
-
-Screen the entire video for movement breakdown, pace, equipment, floor clearance, support, seated alternatives, visual and spoken cueing, caption quality and claims. Favor low-complexity general coordination. Route symptom-provoking gaze work, vestibular treatment claims and higher-risk standing or directional drills to an appropriately qualified clinician. Exclude brain detox and lymphatic clearance claims from this collection.
+Metadata verification covered identity and watch links. Playback, caption quality, specific movements and claims remain unverified. The app displays **Collection in Development** and the creator channel reference while all records are pending.
 
 ## Evidence and source shortlist
 
@@ -62,3 +58,10 @@ These sources support the design scope. They do not establish effectiveness or s
 - Static assets were served from the checkout through Playwright request routing. The test used fallback fonts. It did not cover real mobile devices, screen readers, full game sessions, or YouTube playback.
 - JavaScript syntax checks and the Git whitespace check passed. The movement module adds no external scripts, embeds, tracking, credentials, or personal data collection. The channel link opens a separate tab with opener protection.
 - Before public release, review full videos and verify accessible instructions, caption quality, safety and attribution. Clinical claims or higher-risk movements need qualified review. Complete assistive technology and real-device checks before requesting release approval.
+
+## Eyes, Head & Body collection QA — November 18, 2026
+
+- Chromium through Playwright passed all six categories, pending-video visibility, the creator channel link, keyboard entry and return focus, the PPS doorway, and Breathe start and exit at 1440 × 900, 390 × 844, 320 × 568 and 844 × 390. Stargazer and Sentinel each launched on desktop.
+- An isolated browser fixture passed all four cards at 1440 × 900, 390 × 844 and 320 × 568. It checked display labels, original titles, attribution, official watch URLs, separate-tab and opener protection attributes, keyboard focus, 44px link heights and horizontal fit. A record marked approved without a review record stayed hidden. The fixture approvals were applied in memory for testing only. All four committed records remain pending.
+- Captured a mobile comparison of the current draft and the simulated approved layout. Browser checks used local assets through request routing and fallback fonts. They did not cover YouTube playback, screen readers or real devices.
+- JavaScript syntax and Git whitespace checks passed. No browser test failures were observed in the completed run.

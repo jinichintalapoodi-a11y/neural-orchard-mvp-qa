@@ -36,6 +36,56 @@ export const categories = [
   },
 ];
 
-// Each entry needs categoryId, title, creator, url, and reviewStatus.
-// Keep candidate videos out of the user-facing list until all reviews are complete.
-export const exerciseCatalog = [];
+// Founder selection adds a candidate to the registry. Publication requires a recorded review.
+export const exerciseCatalog = [
+  {
+    categoryId: 'coordination',
+    label: 'Cerebellar Movement',
+    title: 'CEREBELLUM UPGRAGE',
+    creator: 'Eligned Movement',
+    url: 'https://www.youtube.com/watch?v=U1HsnRQyJ2U',
+    description: 'A guided movement session with a focus on coordination.',
+    reviewStatus: 'pending',
+    review: null,
+  },
+  {
+    categoryId: 'coordination',
+    label: 'Neuro-Lymph Movement',
+    title: 'NEURO-LYMPH 2.0',
+    creator: 'Eligned Movement',
+    url: 'https://www.youtube.com/watch?v=lZSN2UET1GQ',
+    description: 'A guided session for exploring a variety of movements.',
+    reviewStatus: 'pending',
+    review: null,
+  },
+  {
+    categoryId: 'coordination',
+    label: 'Movement for Hormonal Transitions',
+    title: 'Neuro-movement for hormonal brains',
+    creator: 'Eligned Movement',
+    url: 'https://www.youtube.com/watch?v=BnnBt67tuqE',
+    description: 'A guided movement session created with midlife in mind.',
+    reviewStatus: 'pending',
+    review: null,
+  },
+  {
+    categoryId: 'coordination',
+    label: 'Morning Brain & Body Wake-Up',
+    title: 'TURN YOUR BRAIN ON',
+    creator: 'Eligned Movement',
+    url: 'https://www.youtube.com/watch?v=Pju2LEAOG9w',
+    description: 'A morning movement session that uses a ball.',
+    reviewStatus: 'pending',
+    review: null,
+  },
+];
+
+export function approvedExercises(categoryId) {
+  return exerciseCatalog.filter(({ categoryId: entryCategory, reviewStatus, review }) =>
+    entryCategory === categoryId &&
+    reviewStatus === 'approved' &&
+    review?.reviewer?.trim() &&
+    review.date?.trim() &&
+    Array.isArray(review.limitations)
+  );
+}

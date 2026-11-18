@@ -1,4 +1,4 @@
-import { categories, exerciseCatalog } from './physical-movement-content.js';
+import { categories, approvedExercises } from './physical-movement-content.js';
 
 const entrance = document.getElementById('enter-movement');
 const portal = document.getElementById('content-portal');
@@ -45,19 +45,13 @@ function returnHome() {
   entrance.focus();
 }
 
-function approvedExercises(category) {
-  return exerciseCatalog.filter(exercise =>
-    exercise.categoryId === category.id && exercise.reviewStatus === 'approved'
-  );
-}
-
 function showCategories(previousId) {
   const heading = show('Physical Movement', 'Return to Neural Orchard', returnHome);
   heading.after(element('p', 'Move well today. Stay strong for tomorrow.'));
   const grid = element('div', '', 'movement-doors');
   for (const category of categories) {
     const categoryButton = button(category.name, () => showCollection(category));
-    const status = approvedExercises(category).length ? 'Exercises available' : 'In development';
+    const status = approvedExercises(category.id).length ? 'Exercises available' : 'In development';
     categoryButton.append(element('span', status, 'movement-status'));
     categoryButton.dataset.category = category.id;
     grid.append(categoryButton);
@@ -75,21 +69,33 @@ function showCollection(category) {
     element('h2', 'Move safely'),
     element('p', category.safety),
     element('p', 'Stop exercising if you develop chest pain, feel faint, or experience unusual shortness of breath. Seek emergency help for chest pain, fainting, or severe shortness of breath.'),
-    element('h2', 'Exercise collection'),
   );
-  const exercises = approvedExercises(category);
+  const exercises = approvedExercises(category.id);
   if (exercises.length) {
-    const list = document.createElement('ul');
+    const list = element('ul', '', 'movement-video-list');
+    list.setAttribute('role', 'list');
     for (const exercise of exercises) {
       const entry = document.createElement('li');
-      entry.append(externalLink(exercise.title + ' · ' + exercise.creator, exercise.url));
+      const title = element('h3', exercise.label);
+      const attribution = element('p', exercise.title + ' · ' + exercise.creator);
+      const link = externalLink('Watch on YouTube', exercise.url);
+      link.setAttribute('aria-label', 'Watch ' + exercise.label + ' on YouTube (opens in a new tab)');
+      entry.append(title, attribution, element('p', exercise.description), link);
       list.append(entry);
     }
-    collection.append(list);
+    collection.append(element('h2', 'Exercise collection'), list);
+  } else if (category.id === 'coordination') {
+    collection.append(
+      element('h2', 'Collection in Development'),
+      element('p', 'Guided videos will appear here after safety, accessibility, and content review.'),
+    );
   } else {
-    collection.append(element('p', 'In development. Guided exercises will appear here after review.'));
+    collection.append(
+      element('h2', 'Exercise collection'),
+      element('p', 'In development. Guided exercises will appear here after review.'),
+    );
   }
-  if (category.creator) {
+  if (category.creator && !exercises.length) {
     collection.append(
       element('p', 'The creator channel is a reference while individual videos are reviewed.'),
       externalLink(category.creator.name + ' on YouTube', category.creator.channel),
