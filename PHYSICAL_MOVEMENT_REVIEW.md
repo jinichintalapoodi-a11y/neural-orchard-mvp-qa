@@ -71,3 +71,7 @@ These sources support the design scope. They do not establish effectiveness or s
 The Eyes, Head & Body doorway now has one introductory sentence and session buttons. Each approved session opens its own view with a brief description, the official YouTube link, creator credit and a short safety cue. Back restores focus to the last session button. The scrollable content starts inside the arch curve.
 
 Chromium passed pending-menu, simulated approved-menu and separate video-view checks at 1440 × 900, 390 × 844, 320 × 568 and 844 × 390. The checks covered horizontal fit, clipping at interactive elements, keyboard activation, focus restoration, and matching YouTube URLs with separate-tab and opener-protection attributes. PPS and Breathe smoke checks passed on desktop. Approvals were simulated only in the browser.
+
+### Separate dance session to develop
+
+Add a standalone dance session to Physical Movement for practicing rhythm, changes of direction and balance while moving. Review a beginner-friendly routine with low-impact options before selecting a video. The rationale is based on repeated dance programs in older adults, not a single session. A review found better balance and mobility and fewer falls in dance-based mind-motor programs. Cognitive transfer and advantages over other exercise remain uncertain. [Falls and mobility review](https://pubmed.ncbi.nlm.nih.gov/32975570/) · [Cognitive outcomes review](https://academic.oup.com/ageing/article/50/4/1084/6041778)
