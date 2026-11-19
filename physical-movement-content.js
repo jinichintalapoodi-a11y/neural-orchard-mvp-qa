@@ -42,7 +42,7 @@ export const exerciseCatalog = [
     categoryId: 'coordination',
     label: 'Cerebellar Movement',
     chooserSummary: 'Practice balance and coordination.',
-    why: 'Steadier steps matter on curbs and uneven paths. Regular balance and functional exercise programs reduce falls in older adults. This video’s effect on falls is unknown.',
+    why: 'Practice staying steady as you move. Think stepping off a curb, turning in your kitchen, or walking on an uneven path. Regular balance programs reduce falls in older adults.',
     whySources: [
       { label: 'Cochrane review on falls', url: 'https://doi.org/10.1002/14651858.CD012424.pub2' },
     ],
@@ -56,11 +56,12 @@ export const exerciseCatalog = [
   {
     categoryId: 'coordination',
     label: 'Neuro-Lymph Movement',
-    chooserSummary: 'Loosen up with varied movements.',
-    why: 'Want your face to look less puffy? Gentle facial lymphatic massage may temporarily soften puffiness. Choose this movement session to loosen up after sitting.',
+    chooserSummary: 'Practice moving your arms and legs together.',
+    why: 'Practice keeping your feet moving while your arms or head do something different. Think stepping off a curb while checking for traffic. Repeating a new pattern helps your brain learn it.',
     whySources: [
-      { label: 'Cleveland Clinic on lymphatic massage', url: 'https://health.clevelandclinic.org/lymphatic-drainage-self-massage' },
-      { label: 'CDC on moving more', url: 'https://www.cdc.gov/physical-activity-basics/benefits/index.html' },
+      { label: 'Facial massage and puffiness (a different technique)', url: 'https://health.clevelandclinic.org/lymphatic-drainage-self-massage' },
+      { label: 'How the brain learns new movements', url: 'https://pubmed.ncbi.nlm.nih.gov/22078504/' },
+      { label: 'Research on balance while doing two things at once', url: 'https://pubmed.ncbi.nlm.nih.gov/41152559/' },
     ],
     title: 'NEURO-LYMPH 2.0',
     creator: 'Eligned Movement',
@@ -73,7 +74,7 @@ export const exerciseCatalog = [
     categoryId: 'coordination',
     label: 'Movement for Hormonal Transitions',
     chooserSummary: 'Take a movement break on any cycle day.',
-    why: 'Regular exercise may ease period cramps. No specific cycle day has been shown to make this session more helpful. Choose a day and pace that feel right for you.',
+    why: 'When cramps or low energy make your usual workout feel like too much, choose a pace that works for you. Regular exercise may help ease period cramps over time.',
     whySources: [
       { label: 'Cochrane review on period cramps', url: 'https://www.cochrane.org/evidence/CD004142_exercise-dysmenorrhoea' },
       { label: 'Review of cycle phase and exercise', url: 'https://pubmed.ncbi.nlm.nih.gov/32661839/' },
@@ -89,9 +90,9 @@ export const exerciseCatalog = [
     categoryId: 'coordination',
     label: 'Morning Brain & Body Wake-Up',
     chooserSummary: 'Ease into your morning with movement.',
-    why: 'Choose this to get moving after waking up. A single bout of exercise can have a small short-term benefit for thinking in young adults. That research did not test this video or morning timing.',
+    why: 'Use the ball routine to practice timing your eyes and hands before you get on with your morning. Think of following a moving object and reaching for it at the right moment.',
     whySources: [
-      { label: 'Review of exercise and short-term thinking', url: 'https://pubmed.ncbi.nlm.nih.gov/39242965/' },
+      { label: 'How the brain learns new movements', url: 'https://pubmed.ncbi.nlm.nih.gov/22078504/' },
     ],
     title: 'TURN YOUR BRAIN ON',
     creator: 'Eligned Movement',
