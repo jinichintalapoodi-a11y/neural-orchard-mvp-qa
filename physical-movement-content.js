@@ -57,7 +57,7 @@ export const exerciseCatalog = [
     categoryId: 'coordination',
     label: 'Neuro-Lymph Movement',
     chooserSummary: 'Loosen up with varied movements.',
-    why: 'Choose this for a movement break after sitting. Lymphatic massage is a different technique. This routine has no demonstrated benefit for facial puffiness, lymph drainage, or younger-looking skin.',
+    why: 'Want your face to look less puffy? Gentle facial lymphatic massage may temporarily soften puffiness. Choose this movement session to loosen up after sitting.',
     whySources: [
       { label: 'Cleveland Clinic on lymphatic massage', url: 'https://health.clevelandclinic.org/lymphatic-drainage-self-massage' },
       { label: 'CDC on moving more', url: 'https://www.cdc.gov/physical-activity-basics/benefits/index.html' },
