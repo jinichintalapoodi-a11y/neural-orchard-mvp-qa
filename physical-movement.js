@@ -85,25 +85,24 @@ function showCollection(category) {
 }
 
 function showVideoMenu(category, previousExercise) {
-  const { heading, view } = show(category.name, 'Back to exercise categories', () => showCategories(category.id), true);
+  const { heading, view } = show('Choose an exercise session', 'Back to exercise categories', () => showCategories(category.id), true);
   const collection = element('section', '', 'movement-collection');
   const exercises = approvedExercises(category.id);
   let returnTarget = heading;
 
   if (exercises.length) {
-    collection.append(element('p', 'Choose a session to explore coordination or add variety to how you move.'));
     const list = element('ul', '', 'movement-video-list');
     list.setAttribute('role', 'list');
     for (const exercise of exercises) {
       const entry = document.createElement('li');
       const option = button(exercise.label, () => showVideo(category, exercise));
+      option.append(element('span', exercise.chooserSummary, 'movement-choice-summary'));
       if (exercise === previousExercise) returnTarget = option;
       entry.append(option);
       list.append(entry);
     }
     collection.append(list);
   } else {
-    collection.append(element('p', 'Explore how your eyes, head, and body move together.'));
     collection.append(element('h2', 'Collection in Development'));
   }
 

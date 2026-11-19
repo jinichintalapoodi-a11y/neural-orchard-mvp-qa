@@ -120,6 +120,12 @@ body.show-movement #portal-inner-practice {
   margin: 0;
 }
 
+#physical-movement .movement-choice-summary {
+  display: block;
+  margin-top: 3px;
+  font-size: .875rem;
+}
+
 #physical-movement .movement-watch {
   display: inline-flex;
   align-items: center;

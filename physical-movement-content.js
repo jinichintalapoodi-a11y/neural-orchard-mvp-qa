@@ -41,6 +41,7 @@ export const exerciseCatalog = [
   {
     categoryId: 'coordination',
     label: 'Cerebellar Movement',
+    chooserSummary: 'Practice balance and coordination.',
     title: 'CEREBELLUM UPGRAGE',
     creator: 'Eligned Movement',
     url: 'https://www.youtube.com/watch?v=U1HsnRQyJ2U',
@@ -51,6 +52,7 @@ export const exerciseCatalog = [
   {
     categoryId: 'coordination',
     label: 'Neuro-Lymph Movement',
+    chooserSummary: 'Loosen up with varied movements.',
     title: 'NEURO-LYMPH 2.0',
     creator: 'Eligned Movement',
     url: 'https://www.youtube.com/watch?v=lZSN2UET1GQ',
@@ -61,6 +63,7 @@ export const exerciseCatalog = [
   {
     categoryId: 'coordination',
     label: 'Movement for Hormonal Transitions',
+    chooserSummary: 'Take a movement break on any cycle day.',
     title: 'Neuro-movement for hormonal brains',
     creator: 'Eligned Movement',
     url: 'https://www.youtube.com/watch?v=BnnBt67tuqE',
@@ -71,6 +74,7 @@ export const exerciseCatalog = [
   {
     categoryId: 'coordination',
     label: 'Morning Brain & Body Wake-Up',
+    chooserSummary: 'Ease into your morning with movement.',
     title: 'TURN YOUR BRAIN ON',
     creator: 'Eligned Movement',
     url: 'https://www.youtube.com/watch?v=Pju2LEAOG9w',
