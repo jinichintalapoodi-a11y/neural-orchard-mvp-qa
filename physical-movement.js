@@ -54,7 +54,9 @@ function showCategories(previousId) {
   const grid = element('div', '', 'movement-doors');
   for (const category of categories) {
     const categoryButton = button(category.name, () => showCollection(category));
-    const status = approvedExercises(category.id).length ? 'Exercises available' : 'In development';
+    const hasVideos = approvedExercises(category.id).length ||
+      (category.id === 'space' && approvedExercises('dance').length);
+    const status = hasVideos ? 'Exercises available' : 'In development';
     categoryButton.append(element('span', status, 'movement-status'));
     categoryButton.dataset.category = category.id;
     grid.append(categoryButton);
@@ -65,6 +67,10 @@ function showCategories(previousId) {
 }
 
 function showCollection(category, returnToDance = false) {
+  if (category.id === 'strength') {
+    showStrength(category);
+    return;
+  }
   if (category.id === 'coordination') {
     showVideoMenu(category);
     return;
@@ -97,21 +103,61 @@ function showDance(category) {
     element('p', 'Dance programs improve balance and mobility and reduce falls in older adults.'),
     externalLink('Research on dance, balance, and falls', 'https://pubmed.ncbi.nlm.nih.gov/32975570/'),
   );
-  const videos = approvedExercises('dance');
-  if (videos.length) {
-    const list = element('ul', '', 'movement-video-list');
-    list.setAttribute('role', 'list');
-    for (const video of videos) {
-      const entry = document.createElement('li');
-      entry.append(externalLink(video.label, video.url));
-      list.append(entry);
-    }
-    collection.append(list);
-  } else {
-    collection.append(element('p', 'Dance videos are in development.'));
-  }
+  collection.append(videoLevels('dance'));
   view.append(collection);
   heading.focus();
+}
+
+function showStrength(category) {
+  const { heading, view } = show(category.name, 'Back to exercise categories', () => showCategories(category.id), true);
+  const collection = element('section', '', 'movement-collection');
+  const why = element('details', '', 'movement-why');
+  why.append(
+    element('summary', 'Why?'),
+    element('p', 'Regular strengthening helps you stay strong for everyday life and can support bone health through menopause and beyond.'),
+    externalLink('Research on strength and bone health after menopause', 'https://pubmed.ncbi.nlm.nih.gov/28975661/'),
+  );
+  collection.append(
+    element('p', 'Build strength for stairs, groceries, and getting up from a chair.'),
+    why,
+    videoLevels(category.id),
+    element('p', category.safety, 'movement-attribution'),
+    externalLink('Exercise adaptations for osteoporosis', 'https://doi.org/10.1136/bjsports-2021-104634'),
+  );
+  view.append(collection);
+  heading.focus();
+}
+
+function videoLevels(categoryId) {
+  const videos = approvedExercises(categoryId);
+  const levels = element('ul', '', 'movement-video-list');
+  levels.setAttribute('role', 'list');
+
+  for (const level of ['Beginner', 'Intermediate', 'Advanced']) {
+    const item = document.createElement('li');
+    const disclosure = element('details', '', 'movement-why');
+    disclosure.append(element('summary', level));
+    const matches = videos.filter(video => video.level === level);
+    if (!matches.length) {
+      disclosure.append(element('p', 'Videos are in development.'));
+    } else {
+      const list = document.createElement('ul');
+      for (const video of matches) {
+        const entry = document.createElement('li');
+        entry.append(
+          externalLink(video.label, video.url),
+          element('p', video.creator + ' · ' + video.duration),
+          element('p', video.description),
+        );
+        list.append(entry);
+      }
+      disclosure.append(list);
+    }
+    item.append(disclosure);
+    levels.append(item);
+  }
+
+  return levels;
 }
 
 function showVideoMenu(category, previousExercise) {

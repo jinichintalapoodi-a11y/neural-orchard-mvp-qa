@@ -75,3 +75,21 @@ Chromium passed pending-menu, simulated approved-menu and separate video-view ch
 ### Dance session under Move Through Space
 
 The Dance session lives under Move Through Space. The list displays any approved records with category ID `dance`. Review a beginner-friendly routine with low-impact options before selecting a video. The rationale is based on repeated dance programs in older adults, not a single session. A review found better balance and mobility and fewer falls in dance-based mind-motor programs. Cognitive transfer and advantages over other exercise remain uncertain. [Falls and mobility review](https://pubmed.ncbi.nlm.nih.gov/32975570/) · [Cognitive outcomes review](https://academic.oup.com/ageing/article/50/4/1084/6041778)
+
+### Strength and dance curation
+
+Both collections group reviewed videos by Beginner, Intermediate, and Advanced. Levels are proposed for this audience and reflect coordination, pace, loading, or prior experience. All nine candidates remain pending. Official YouTube metadata matched the titles, creators, runtimes, and IDs and listed at least one English captions track for each. Caption accuracy and the quality of instructions throughout each full video still need review.
+
+| Collection | Proposed level | Official video | Why it made the shortlist / what to check |
+| --- | --- | --- | --- |
+| Strength | Beginner | [National Institute on Aging strength workout](https://www.youtube.com/watch?v=JejTelL05Qw) | Designed for older adults. Check cueing, equipment and modifications throughout. |
+| Strength | Intermediate | [yes2next intermediate strength](https://www.youtube.com/watch?v=8ohMPoJ9QQk) | Trainer April Hattori lists exercises and easier options. Review lunges, swings and cues. [Instructor background](https://yes2next.com/pages/about-us) |
+| Strength | Advanced | [SeniorShape Strength & Pilates](https://www.youtube.com/watch?v=o-fjNgAGrW4) | Standing and floor work with weights plus warm-up and cooldown. The trainer reports ACE certification. Review floor transitions, cues and any supplement or menopause claims before approving. [Trainer background](https://www.youtube.com/@SeniorShapeFitness) |
+| Dance | Beginner | [English National Ballet absolute beginner barre](https://www.youtube.com/watch?v=xSEN8teK6Zc) | James Muller teaches an adult beginner class. Check stability of home barre substitutes and consider the full class length. |
+| Dance | Beginner | [Zumba Latin basics](https://www.youtube.com/watch?v=e5rW7qjd3BY) | Licensed instructor Mauricio Camargo breaks down four styles. Review turning, pace and low-impact options. [Instructor listing](https://www.zumba.com/es-ES/p/zjmauricio) |
+| Dance | Beginner | [BBC Sport Bollywood Part 1](https://www.youtube.com/watch?v=3NomZw-KD34) | Choreographer Nisha Nath teaches the first section step by step. Review the practice pace and cue clarity. [BBC instructor and series notes](https://www.bbc.co.uk/sport/get-inspired/30518516) |
+| Dance | Beginner | [Ailey Extension West African dance](https://www.youtube.com/watch?v=AeJlb-n89LA) | Maguette Camara teaches fundamentals with drum rhythms. Verify that the pace and impact fit the proposed level. [Ailey faculty bio](https://pressroom.ailey.org/the-ailey-extension/faculty/maguette-camara) |
+| Dance | Intermediate | [BodyKinect contemporary combination](https://www.youtube.com/watch?v=VsPsy12RNS4) | The tutorial breaks down the combination before a practice run with counts and a run with music. The description asks viewers to warm up separately. Verify presenter attribution from the full video and review range of motion and transitions. |
+| Dance | Advanced | [Kathryn Morgan Swan Lake barre](https://www.youtube.com/watch?v=RAXCbDOaSoY) | Former professional soloist. The creator labels it intermediate/advanced and emphasizes balance and alignment. Review combinations, prior ballet experience and barre setup. [Instructor bio](https://kathrynmorganonline.com/about/) |
+
+The strength rationale uses the supervised [LIFTMOR trial](https://pubmed.ncbi.nlm.nih.gov/28975661/) and includes [adaptation guidance for osteoporosis](https://doi.org/10.1136/bjsports-2021-104634). These links describe the evidence and adaptation principles. The selected videos require their own review for cueing, equipment, pace and modifications before release.
