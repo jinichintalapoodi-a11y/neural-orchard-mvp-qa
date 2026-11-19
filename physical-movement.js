@@ -64,7 +64,7 @@ function showCategories(previousId) {
   (previousButton ?? heading).focus();
 }
 
-function showCollection(category) {
+function showCollection(category, returnToDance = false) {
   if (category.id === 'coordination') {
     showVideoMenu(category);
     return;
@@ -80,6 +80,36 @@ function showCollection(category) {
     element('h2', 'Exercise collection'),
     element('p', 'In development. Guided exercises will appear here after review.'),
   );
+  let focusTarget = heading;
+  if (category.id === 'space') {
+    const dance = button('Dance', () => showDance(category));
+    collection.append(dance);
+    if (returnToDance) focusTarget = dance;
+  }
+  view.append(collection);
+  focusTarget.focus();
+}
+
+function showDance(category) {
+  const { heading, view } = show('Dance', 'Back to Move Through Space', () => showCollection(category, true), true);
+  const collection = element('section', '', 'movement-collection');
+  collection.append(
+    element('p', 'Dance programs improve balance and mobility and reduce falls in older adults.'),
+    externalLink('Research on dance, balance, and falls', 'https://pubmed.ncbi.nlm.nih.gov/32975570/'),
+  );
+  const videos = approvedExercises('dance');
+  if (videos.length) {
+    const list = element('ul', '', 'movement-video-list');
+    list.setAttribute('role', 'list');
+    for (const video of videos) {
+      const entry = document.createElement('li');
+      entry.append(externalLink(video.label, video.url));
+      list.append(entry);
+    }
+    collection.append(list);
+  } else {
+    collection.append(element('p', 'Dance videos are in development.'));
+  }
   view.append(collection);
   heading.focus();
 }

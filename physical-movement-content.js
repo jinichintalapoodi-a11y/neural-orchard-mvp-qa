@@ -42,7 +42,7 @@ export const exerciseCatalog = [
     categoryId: 'coordination',
     label: 'Cerebellar Movement',
     chooserSummary: 'Practice balance and coordination.',
-    why: 'Practice staying steady as you move. Think stepping off a curb, turning in your kitchen, or walking on an uneven path. Regular balance programs reduce falls in older adults.',
+    why: 'Practice staying steady when you step off a curb, turn, or walk on an uneven path.',
     whySources: [
       { label: 'Cochrane review on falls', url: 'https://doi.org/10.1002/14651858.CD012424.pub2' },
     ],
@@ -57,9 +57,8 @@ export const exerciseCatalog = [
     categoryId: 'coordination',
     label: 'Neuro-Lymph Movement',
     chooserSummary: 'Practice moving your arms and legs together.',
-    why: 'Practice keeping your feet moving while your arms or head do something different. Think stepping off a curb while checking for traffic. Repeating a new pattern helps your brain learn it.',
+    why: 'Practice keeping one movement going while adding another. Think of stepping off a curb while turning your head to check for traffic. Learning a new movement is one way your brain adapts with practice. That’s neuroplasticity.',
     whySources: [
-      { label: 'Facial massage and puffiness (a different technique)', url: 'https://health.clevelandclinic.org/lymphatic-drainage-self-massage' },
       { label: 'How the brain learns new movements', url: 'https://pubmed.ncbi.nlm.nih.gov/22078504/' },
       { label: 'Research on balance while doing two things at once', url: 'https://pubmed.ncbi.nlm.nih.gov/41152559/' },
     ],
@@ -74,7 +73,7 @@ export const exerciseCatalog = [
     categoryId: 'coordination',
     label: 'Movement for Hormonal Transitions',
     chooserSummary: 'Take a movement break on any cycle day.',
-    why: 'When cramps or low energy make your usual workout feel like too much, choose a pace that works for you. Regular exercise may help ease period cramps over time.',
+    why: 'If cramps or low energy make your usual workout feel like too much, you can try this today.',
     whySources: [
       { label: 'Cochrane review on period cramps', url: 'https://www.cochrane.org/evidence/CD004142_exercise-dysmenorrhoea' },
       { label: 'Review of cycle phase and exercise', url: 'https://pubmed.ncbi.nlm.nih.gov/32661839/' },
@@ -89,8 +88,8 @@ export const exerciseCatalog = [
   {
     categoryId: 'coordination',
     label: 'Morning Brain & Body Wake-Up',
-    chooserSummary: 'Ease into your morning with movement.',
-    why: 'Use the ball routine to practice timing your eyes and hands before you get on with your morning. Think of following a moving object and reaching for it at the right moment.',
+    chooserSummary: 'Start your morning with hand-eye coordination.',
+    why: 'Wake up your brain and body with a ball routine that gets your eyes and hands working together. It’s a way to start moving and build momentum for the day.',
     whySources: [
       { label: 'How the brain learns new movements', url: 'https://pubmed.ncbi.nlm.nih.gov/22078504/' },
     ],
