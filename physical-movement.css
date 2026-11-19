@@ -136,3 +136,21 @@ body.show-movement #portal-inner-practice {
 #physical-movement .movement-attribution {
   font-size: .875rem;
 }
+
+#physical-movement .movement-why {
+  margin: 0 8px 4px;
+  text-align: left;
+}
+
+#physical-movement .movement-why summary {
+  width: fit-content;
+  padding: 12px 4px;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+#physical-movement .movement-why a {
+  display: block;
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}

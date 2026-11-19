@@ -98,7 +98,14 @@ function showVideoMenu(category, previousExercise) {
       const option = button(exercise.label, () => showVideo(category, exercise));
       option.append(element('span', exercise.chooserSummary, 'movement-choice-summary'));
       if (exercise === previousExercise) returnTarget = option;
-      entry.append(option);
+      const why = element('details', '', 'movement-why');
+      const summary = element('summary', 'Why?');
+      summary.setAttribute('aria-label', 'Why choose ' + exercise.label + '?');
+      why.append(summary, element('p', exercise.why));
+      for (const source of exercise.whySources) {
+        why.append(externalLink(source.label, source.url));
+      }
+      entry.append(option, why);
       list.append(entry);
     }
     collection.append(list);
